@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="content">
+       <div id="coeficientes">
+            <input type="number" name="a" id="a" placeholder="Digite o coeficiente a:"><br><br>
+            <input type="number" name="b" id="b" placeholder="Digite o coeficiente b:"><br><br>
+            <input type="number" name="c" id="c" placeholder="Digite o coeficiente c:"><br><br>
+            <button type="button" id="cdelta-001">Calcular Delta</button>
+       </div>      
+    </main>
+    
+    <script>
+       var mcoef = window.document.querySelector("div#coeficientes");  
+
+       var cdelta = window.document.querySelector("button#cdelta-001");
+       var a = window.document.querySelector("input#a");
+       var b = window.document.querySelector("input#b");
+       var c = window.document.querySelector("input#c");
+
+        cdelta.addEventListener(`click`, calcdelta);
+
+        function calcdelta(){           
+            var va = (a.value);
+            var vb = (b.value);
+            var vc = (c.value);
+            vbb$ = -vb;
+            vb2 = vbb$*vbb$;            
+            var d1 = va*vc;
+            var d2 = 4*d1;
+            var d3 = vb2 - d2;
+            window.alert(`Delta=${d3}`);
+            //Bhaskara;
+
+           var $vvb$ = -vb;
+           var $2a$ = 2*va
+           var $raizdelta$ =  Math.sqrt(d3);
+           var $x1$ = $vvb$ + $raizdelta$;
+           var $x11$ = $x1$ / $2a$;
+           var $x2$ = $vvb$ - $raizdelta$;
+           var $x22$ = $x2$ / $2a$;
+           window.alert(`Conjunto Solução:`);
+           window.alert(`S{x1= ${$x11$.toFixed(2)}, x2= ${$x22$.toFixed(2)}}`);
+          
+        }
+    </script>
+</body>
+</html>
